@@ -4,8 +4,84 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5fbbe6137dc77bcd5b6646b5dd75b52",
+    "content-hash": "217169e4ad7160523530d47d69e8572a",
     "packages": [
+        {
+            "name": "binafy/laravel-cart",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/binafy/laravel-cart.git",
+                "reference": "b1c3c654e1df00ad72a80f65a7ccc761e47eaffe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/binafy/laravel-cart/zipball/b1c3c654e1df00ad72a80f65a7ccc761e47eaffe",
+                "reference": "b1c3c654e1df00ad72a80f65a7ccc761e47eaffe",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.5",
+                "orchestra/testbench": "^7.0|^8.0|^9.0",
+                "pestphp/pest-plugin-laravel": "^1.4.0|^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Binafy\\LaravelCart\\Providers\\LaravelCartServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Binafy\\LaravelCart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "milwad-dev",
+                    "email": "milwad.dev@gmail.com",
+                    "homepage": "https://github.com/milwad-dev",
+                    "role": "author"
+                },
+                {
+                    "name": "binafy",
+                    "homepage": "https://github.com/binafy",
+                    "role": "owner"
+                }
+            ],
+            "description": "Laravel Cart is a customizable package for adding shopping cart functionality to Laravel applications",
+            "homepage": "https://github.com/binafy/laravel-cart",
+            "keywords": [
+                "Laravel Basket",
+                "Laravel cart",
+                "binafy",
+                "cart",
+                "framework",
+                "laravel",
+                "laravel cart package",
+                "laravel e-commerce",
+                "laravel package",
+                "laravel-cart",
+                "laravel-cart-shop",
+                "laravel-shop",
+                "milwad"
+            ],
+            "support": {
+                "issues": "https://github.com/binafy/laravel-cart/issues",
+                "source": "https://github.com/binafy/laravel-cart/tree/v1.1.1"
+            },
+            "time": "2024-12-26T13:35:32+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -5983,6 +6059,67 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "v2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/c40f7fce4fd80e39c7f4317697eeba21d2344003",
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^11.0",
+                "illuminate/filesystem": "^11.0",
+                "illuminate/support": "^11.0",
+                "illuminate/validation": "^11.0",
+                "php": "^8.2.0",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^11.0",
+                "orchestra/testbench-core": "^9.0",
+                "phpstan/phpstan": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2025-01-26T19:08:50+00:00"
         },
         {
             "name": "laravel/pint",

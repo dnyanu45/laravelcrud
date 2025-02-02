@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->String('name');
             $table->String('sku');
-            $table->double('price',10,2);
+            // $table->String('product_type');
+            $table->integer('price');
             $table->text('description')->nullable();
             $table->String('image')->nullable();
             $table->timestamps();

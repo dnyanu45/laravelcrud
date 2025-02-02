@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel 11 crud</title>
     <link href="https:\\cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .button:hover{background-color: rgb(2, 109, 224);}
+    </style>
   </head>
   <body>
     <div class="bg-dark py-3">
         <h3 class="text-white text-center">Simple Laravel 11 CRUD</h3>
     </div>
     <div class="container">
-      <div class="row justify-content-center mt-4">
-        <div class="col-md-10 d-flex justify-content-end">
-          <a href="{{ route('products.create') }}" class="btn btn-dark"> Create</a>
+      <div class="row   p-3 align-center mt-4" >
+        <div class="col-md-15 p-2 d-flex w-100 justify-content-end" >
+          <a href="{{ route('products.create') }}" class="button  btn  border-info btn-dark" > Home</a>&nbsp; &nbsp;
+          <a href="{{ route('products.create') }}" class="button btn border-info btn-dark mr-2"> Create</a>&nbsp; &nbsp;
+          <a href="{{ route('dashboard') }}" class="button btn border-info btn-dark"> dashboard</a>&nbsp; &nbsp;
+          <a href="{{ route('login') }}" class="button btn border-info btn-dark"> Logout</a>
         </div>
       </div>
         <div class="row d-flex justify-content-center">
@@ -33,9 +39,10 @@
                       <table class="table">
                         <tr>
                           <th>ID</th>
-                          <th></th>
+                          <th>Image</th>
                           <th>Name</th>
                           <th>Sku</th>
+                          <th>Product Type</th>
                           <th>Price</th>
                           <th>Created at</th>
                           <th>Action</th>
@@ -52,6 +59,7 @@
                         </td>
                           <td>{{ $product->name }}</td>
                           <td>{{ $product->sku }}</td>
+                          <td>{{ $product->product_type }}</td>
                           <td>₹{{ $product->price }}</td>
                           <td>{{ \Carbon\Carbon::parse($product->created_at)->format('d M, Y') }}</td>
                           <td>

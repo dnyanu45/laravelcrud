@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Product;
+use DB;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\support\facades\validator;
 use App\Models\User;
@@ -30,6 +32,7 @@ class ProductController extends Controller
             'name' => 'required|min:5',
             'sku' => 'required|min:3',
             'price' => 'required|numeric',
+            'product_type' => 'required|string|in:Phone,Tablet,laptop,Headphones & sound', // Validate product_type
         ];
 
         if($request->image != ""){
@@ -46,6 +49,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->sku = $request->sku;
+        $product->product_type = $request->product_type;  // Store the product type
         $product->price = $request->price;
         $product->description = $request->description;
         $product->save();
@@ -85,6 +89,8 @@ class ProductController extends Controller
             'name' => 'required|min:5',
             'sku' => 'required|min:3',
             'price' => 'required|numeric',
+            'product_type' => 'required|string|in:Phone,Tablet,laptop,Headphones & sound', // Validate product_type
+
         ];
 
         if($request->image != ""){
@@ -100,6 +106,7 @@ class ProductController extends Controller
         //here we will update product in db
         $product->name = $request->name;
         $product->sku = $request->sku;
+        $product->product_type = $request->product_type;  // Store the product type
         $product->price = $request->price;
         $product->description = $request->description;
         $product->save();
@@ -138,5 +145,53 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', 'product deleted successfully');
     }
-}
+
+    public function phone(){
+        return view('products.dashboard');
+    }
+
+
+    public function login(){
+        return view('products.login');
+    }
+
+    public function signup(){
+        return view('products.signup');
+    }
+
+    public function showDashboard(Request $request){
+
+        $userlogin = auth()->user();
+
+        // public function showPhones(){
+            $phone = DB::table('products')
+                         ->where('product_type','phone')
+                         ->simplePaginate(4);
+    
+        //                  return view('products.dashboard',compact('phone'));
+        // }
+    
+        // public function showTabes(){
+            $tablet = DB::table('products')
+                         ->where('product_type','tablet')
+                         ->simplePaginate(4);
+
+    
+        //                  return view('products.dashboard',compact('tablet'));
+        // }
+
+        $laptop = DB::table('products')
+                         ->where('product_type','laptop')
+                         ->simplePaginate(4);
+
+        $Headphones_sound = DB::table('products')
+                         ->where('product_type','Headphones & sound')
+                         ->simplePaginate(4);
+
+                            return view('products.dashboard', compact('phone', 'tablet','laptop','Headphones_sound', 'userlogin'));
+    }
+
+    }
+
+
 

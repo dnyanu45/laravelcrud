@@ -45,6 +45,23 @@
                                 @enderror
                             
                             </div>
+
+                            <div class="mb-3">
+                                <!-- Product Type -->
+    <label for="product_type" class="form-label h4">Product Type</label>
+    <select name="product_type" class="form-control form-control-lg @error('product_type') is-invalid @enderror">
+        <option value="" disabled {{ old('product_type') ? '' : 'selected' }}>Select Product Type</option>
+        <option value="Phone" {{ old('product_type') == 'Phone' ? 'selected' : '' }}>Phone</option>
+        <option value="Tablet" {{ old('product_type') == 'Tablet' ? 'selected' : '' }}>Tablet</option>
+        <option value="laptop" {{ old('Prproduct_typeoductType') == 'laptop' ? 'selected' : '' }}>Laptop</option>
+        <option value="Headphones & sound" {{ old('ProductType') == 'Headphones & sound' ? 'selected' : '' }}>Headphones & sound</option>
+    </select>
+
+    @error('product_type')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+</div> 
                             <div class="mb-3">
                                 <label for="" class="form-label h4">Price</label>
                                 <input type="text" value="{{ old('price', $product->price) }}" class="@error('price') is-invalid @enderror form-control form-control-lg" placeholder="Price" name="price">
